@@ -1,7 +1,7 @@
 var nama = prompt("Masukkan nama kamu");
     document.getElementById("nama").innerText = nama;
 
-
+// Fix fungsi dibawah agar tidak reload saat submit
 function validateForm() {
     var namaDepan = document.forms["message-form"]["nama-depan"].value;
     var namaBelakang = document.forms["message-form"]["nama-belakang"].value;
