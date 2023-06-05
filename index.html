@@ -24,10 +24,10 @@
         <img src="./img/sc-banner-01.png" alt="hero image">
     </div>
 
-    <script>
+    <!--<script>
         var nama = prompt("Masukkan nama kamu");
         document.getElementById("nama").innerText = nama;
-    </script>
+    </script> -->
 
     <div id="headquarters-section">
         <h1>Headquarters</h1>
@@ -52,37 +52,85 @@
     </div>
     <div id="message-us-section">
         <h1>Message Us</h1>
-        <table>
+        <form name="message-form" onsubmit="return validateForm()">
+            <table>
             <tr>
                 <td>Nama Depan</td>
                 <td>:</td>
-                <td><input id="input-nama-depan" type="text" name="nama"></td>
+                <td><input id="input-nama-depan" type="text" name="nama-depan"></td>
             </tr>
             <tr>
                 <td>Nama Belakang</td>
                 <td>:</td>
-                <td><input id="input-nama-belakang" type="text" name="nama"></td>
+                <td><input id="input-nama-belakang" type="text" name="nama-belakang"></td>
             </tr>
             <tr>
                 <td>Tanggal Lahir</td>
                 <td>:</td>
-                <td><input id="input-tanggal" type="date"></td>
+                <td><input id="input-tanggal" type="date" name="tanggal"></td>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>
                 <td>:</td>
                 <td>
-                    <input type="radio" name="gender" value="laki-laki">Laki-Laki
-                    <input type="radio" name="gender" value="perempuan">Perempuan
+                    <input type="radio" name="gender" value="Laki-laki">Laki-Laki
+                    <input type="radio" name="gender" value="Perempuan">Perempuan
                 </td>
             </tr>
             <tr>
                 <td>Pesan</td>
                 <td>:</td>
-                <td><input id="input-pesan" type="text"></td>
+                <td><input id="input-pesan" type="text" name="pesan"></td>
             </tr>
-        </table>
-        <button id="kirim">Kirim</button>
+            </table>
+            <input type="submit" value="Kirim" id="kirim">
+        </form>
+
+        <script>
+            function validateForm() {
+                var namaDepan = document.forms["message-form"]["nama-depan"].value;
+                var namaBelakang = document.forms["message-form"]["nama-belakang"].value;
+                var tanggalLahir = document.forms["message-form"]["tanggal"].value;
+                var genderKamu = document.forms["message-form"]["gender"].value;
+                var pesanKamu = document.forms["message-form"]["pesan"].value;
+                document.getElementById('sender-nama-depan').innerText = namaDepan;
+                document.getElementById('sender-nama-belakang').innerText = namaBelakang;
+                document.getElementById('sender-nama-tanggal-lahir').innerText = tanggalLahir;
+                document.getElementById('sender-gender').innerText = genderKamu;
+                document.getElementById('sender-pesan').innerText = genderKamu;
+                return false;
+            }
+        </script>
+
+        <div class="form-output">
+            <table>
+                <tr>
+                    <td>Nama Depan</td>
+                    <td>:</td>
+                    <td><span id="sender-nama-depan"></span></td>
+                </tr>
+                <tr>
+                    <td>Nama Belakang</td>
+                    <td>:</td>
+                    <td><span id="sender-nama-belakang"></span></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td>:</td>
+                    <td><span id="sender-tanggal-lahir"></span></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td><span id="sender-gender"></span></td>
+                </tr>
+                <tr>
+                    <td>Pesan</td>
+                    <td>:</td>
+                    <td><span id="sender-pesan"></span></td>
+                </tr>
+            </table>
+        </div>
     </div>
     <footer>
         <p>Created by Royhan</p>
