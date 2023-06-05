@@ -50,8 +50,9 @@
             </div>
         </div>
     </div>
+
+    <h1>Message Us</h1>
     <div id="message-us-section">
-        <h1>Message Us</h1>
         <form name="message-form" onsubmit="return validateForm()">
             <table>
             <tr>
@@ -86,23 +87,8 @@
             <input type="submit" value="Kirim" id="kirim">
         </form>
 
-        <script>
-            function validateForm() {
-                var namaDepan = document.forms["message-form"]["nama-depan"].value;
-                var namaBelakang = document.forms["message-form"]["nama-belakang"].value;
-                var tanggalLahir = document.forms["message-form"]["tanggal"].value;
-                var genderKamu = document.forms["message-form"]["gender"].value;
-                var pesanKamu = document.forms["message-form"]["pesan"].value;
-                document.getElementById('sender-nama-depan').innerText = namaDepan;
-                document.getElementById('sender-nama-belakang').innerText = namaBelakang;
-                document.getElementById('sender-nama-tanggal-lahir').innerText = tanggalLahir;
-                document.getElementById('sender-gender').innerText = genderKamu;
-                document.getElementById('sender-pesan').innerText = genderKamu;
-                return false;
-            }
-        </script>
-
         <div class="form-output">
+        <fieldset>
             <table>
                 <tr>
                     <td>Nama Depan</td>
@@ -130,6 +116,7 @@
                     <td><span id="sender-pesan"></span></td>
                 </tr>
             </table>
+        </fieldset>
         </div>
     </div>
     <footer>

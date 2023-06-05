@@ -13,6 +13,10 @@ body {
     background: hsl(0, 0, 0);
 }
 
+body > h1 {
+    padding: 0 100px 0 100px;
+}
+
 a {
     text-decoration: 0;
     color: inherit;
@@ -119,11 +123,19 @@ header {
 }
 
 #message-us-section {
+    display: flex;
     padding: 0 100px 3em 100px;
 }
 
 #message-us-section > table > tr {
     margin: 1em 0;
+}
+
+.form-output > fieldset {
+    margin-top: -3em;
+    margin-left: 20em;
+    padding-right: 40em;
+    padding-bottom: 5em;
 }
 
 #kirim {
