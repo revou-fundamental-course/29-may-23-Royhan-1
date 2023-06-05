@@ -17,11 +17,18 @@
             <a href="#message-us-section"><div class="nav-items">Message Us</div></a>
         </div>
     </header>
+
     <div id="hero-section" class="hero">
-        <h1>Welcome to Our Website!</h1>
+        <h1>Hi, <span id="nama"></span> Welcome to Our Website!</h1>
         <h2>Ini adalah website SC Ceramic</h2>
         <img src="./img/sc-banner-01.png" alt="hero image">
     </div>
+
+    <script>
+        var nama = prompt("Masukkan nama kamu");
+        document.getElementById("nama").innerText = nama;
+    </script>
+
     <div id="headquarters-section">
         <h1>Headquarters</h1>
         <div class="wrapper">
