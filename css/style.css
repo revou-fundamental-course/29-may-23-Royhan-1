@@ -109,3 +109,26 @@ header {
 .hq-images:hover {
     transform: scale(1.2);
 }
+
+#message-us-section {
+    padding: 0 100px 3em 100px;
+}
+
+#message-us-section > table > tr {
+    margin: 1em 0;
+}
+
+#kirim {
+    width: 24em;
+    padding: .5em;
+    border: 1px solid #000;
+    border-radius: 4px;
+    margin-top: 1em;
+    background-color: #630100;
+    color: white;
+    font-weight: 600;
+}
+
+#kirim:hover {
+    background-color: #870000;
+}
