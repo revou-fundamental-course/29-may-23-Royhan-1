@@ -99,11 +99,19 @@ header {
 }
 
 .hq-images {
+    display: flex;
     height: 5em;
     width: 5em;
     border: 1px solid #000;
     border-radius: 50%;
     margin: 0 1em;
+}
+
+.hq-images > img {
+    object-fit: cover;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
 }
 
 .hq-images:hover {
