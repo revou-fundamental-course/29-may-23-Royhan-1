@@ -61,9 +61,14 @@
                 <td><input id="input-nama-belakang" type="text" name="nama-belakang"></td>
             </tr>
             <tr>
-                <td>Tanggal Lahir</td>
+                <td>Nomor Telepon</td>
                 <td>:</td>
-                <td><input id="input-tanggal" type="date" name="tanggal"></td>
+                <td><input id="input-tanggal" type="number" name="telpon"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><input id="input-tanggal" type="email" name="email"></td>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>
@@ -78,7 +83,7 @@
             <tr>
                 <td>Pesan</td>
                 <td>:</td>
-                <td><input id="input-pesan" type="textarea" name="pesan"></td>
+                <td><textarea id="input-pesan" type="textarea" name="pesan" rows="4" cols="auto"></textarea></td>
             </tr>
             </table>
             <input type="submit" value="Kirim" id="kirim">
@@ -88,7 +93,8 @@
             function validateForm() {
                 var fname = document.forms["message-form"]["nama-depan"].value;
                 var lname = document.forms["message-form"]["nama-belakang"].value;
-                var dob = document.forms["message-form"]["tanggal"].value;
+                var telp = document.forms["message-form"]["telpon"].value;
+                var emailcust = document.forms["message-form"]["email"].value;
                 var gender = document.forms["message-form"]["gender"].value;
                 var pesan = document.forms["message-form"]["pesan"].value;
 
@@ -98,14 +104,15 @@
                 };
                 form.addEventListener("submit", handleForm);
 
-                if (fname == "" || lname == "" || dob == "" || gender == "" || pesan == "") {
+                if (fname == "" || lname == "" || emailcust == "" || gender == "" || pesan == "" || telp == "") {
                 alert("Tidak boleh ada yang kosong");
                 return false;
                 };
 
                 document.getElementById('sender-nama-depan').innerText = fname;
                 document.getElementById('sender-nama-belakang').innerText = lname;
-                document.getElementById('sender-tanggal-lahir').innerText = dob;
+                document.getElementById('sender-no-telp').innerText = telp;
+                document.getElementById('sender-email').innerText = emailcust;
                 document.getElementById('sender-gender').innerText = gender;
                 document.getElementById('sender-pesan').innerText = pesan;
                 return false;
@@ -126,9 +133,14 @@
                     <td><span id="sender-nama-belakang"></span></td>
                 </tr>
                 <tr>
-                    <td>Tanggal Lahir</td>
+                    <td>Nomor Telepon</td>
                     <td>:</td>
-                    <td><span id="sender-tanggal-lahir"></span></td>
+                    <td><span id="sender-no-telp"></span></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td><span id="sender-email"></span></td>
                 </tr>
                 <tr>
                     <td>Jenis Kelamin</td>
