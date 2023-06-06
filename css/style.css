@@ -131,13 +131,6 @@ header {
     margin: 1em 0;
 }
 
-.form-output > fieldset {
-    margin-top: -3em;
-    margin-left: 20em;
-    padding-right: 40em;
-    padding-bottom: 5em;
-}
-
 #kirim {
     width: 24em;
     padding: .5em;
@@ -151,6 +144,14 @@ header {
 
 #kirim:hover {
     background-color: #870000;
+}
+
+.form-output {
+    border: 1px solid #000;
+    margin-top: -3em;
+    margin-left: 20em;
+    padding-right: 40em;
+    padding-bottom: 5em;
 }
 
 footer {

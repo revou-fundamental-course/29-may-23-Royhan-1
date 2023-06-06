@@ -12,9 +12,9 @@
         <img class="logo" src="./img/logo-sc.svg" alt="SC Ceramics Logo">
         <div id="nav-bar">
             <div class="nav-items">Home</div>
-            <div class="nav-items">Our Profile</div>
+            <a href="./profile.html" target="_blank"><div class="nav-items" style="border-radius: 0;">Our Profile</div></a>
             <div class="nav-items">Portofolio</div>
-            <a href="#message-us-section"><div class="nav-items">Message Us</div></a>
+            <a href=".#message-us-section"><div class="nav-items">Message Us</div></a>
         </div>
     </header>
 
@@ -24,10 +24,11 @@
         <img src="./img/sc-banner-01.png" alt="hero image">
     </div>
 
-    <!--<script>
+    <script>
         var nama = prompt("Masukkan nama kamu");
         document.getElementById("nama").innerText = nama;
-    </script> -->
+    </script>
+
 
     <div id="headquarters-section">
         <h1>Headquarters</h1>
@@ -53,7 +54,7 @@
 
     <h1>Message Us</h1>
     <div id="message-us-section">
-        <form name="message-form" onsubmit="return validateForm()">
+        <form id="messageform" name="message-form" onsubmit="return validateForm()">
             <table>
             <tr>
                 <td>Nama Depan</td>
@@ -74,21 +75,52 @@
                 <td>Jenis Kelamin</td>
                 <td>:</td>
                 <td>
-                    <input type="radio" name="gender" value="Laki-laki">Laki-Laki
-                    <input type="radio" name="gender" value="Perempuan">Perempuan
+                    <input type="radio" id="male" name="gender" value="Laki-laki">
+                    <label for="male">Laki-Laki</label>
+                    <input type="radio" id="female" name="gender" value="Perempuan">
+                    <label for="female">Perempuan</label>
                 </td>
             </tr>
             <tr>
                 <td>Pesan</td>
                 <td>:</td>
-                <td><input id="input-pesan" type="text" name="pesan"></td>
+                <td><input id="input-pesan" type="textarea" name="pesan"></td>
             </tr>
             </table>
             <input type="submit" value="Kirim" id="kirim">
         </form>
 
+        <script>
+            // Fix fungsi dibawah agar tidak reload saat submit
+            function validateForm() {
+                var fname = document.forms["message-form"]["nama-depan"].value;
+                var lname = document.forms["message-form"]["nama-belakang"].value;
+                var dob = document.forms["message-form"]["tanggal"].value;
+                var gender = document.forms["message-form"]["gender"].value;
+                var pesan = document.forms["message-form"]["pesan"].value;
+
+                var form = document.getElementById("messageform");
+                function handleForm(event) {
+                event.preventDefault();
+                };
+                form.addEventListener("submit", handleForm);
+
+                /*if (fname == "" || lname == "" || dob == "" || gender == "" || pesan == "") {
+                alert("Tidak boleh ada yang kosong");
+                return false;
+                };*/
+
+                document.getElementById('sender-nama-depan').innerText = fname;
+                document.getElementById('sender-nama-belakang').innerText = lname;
+                document.getElementById('sender-tanggal-lahir').innerText = dob;
+                document.getElementById('sender-gender').innerText = gender;
+                document.getElementById('sender-pesan').innerText = pesan;
+                return false;
+                }
+        </script>
+
         <div class="form-output">
-        <fieldset>
+        
             <table>
                 <tr>
                     <td>Nama Depan</td>
@@ -116,7 +148,6 @@
                     <td><span id="sender-pesan"></span></td>
                 </tr>
             </table>
-        </fieldset>
         </div>
     </div>
     <footer>
