@@ -6,6 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Profile</title>
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        @media only screen and (max-width: 768px) {
+
+            :root {
+                --fs-h1: 2.4rem;
+                --fs-h2: 1.8rem;
+                --fs-body: 1.2rem;
+            }
+
+            header {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-items {
+                margin-top: 2vh;
+            }
+
+            .hq-images {
+                min-width: 24px;
+                min-height: 24px;
+            }
+
+            .hero-text-box {
+                position: inherit;
+            }
+
+            #message-us-section {
+                flex-direction: column;
+            }
+
+            .form-output {
+                width: 100%;
+                margin-top: 2vh;
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,9 +57,11 @@
     </header>
 
     <div id="hero-section" class="hero">
-        <h1>Hi, <span id="nama"></span> Welcome to Our Website!</h1>
-        <h2>Ini adalah website SC Ceramic</h2>
         <img src="./img/sc-banner-01.png" alt="hero image">
+        <div class="hero-text-box">
+            <h1>Hi, <span id="nama"></span> Welcome to Our Website!</h1>
+            <h2>Ini adalah website SC Ceramic</h2>
+        </div>
     </div>
 
     <div id="headquarters-section">
@@ -46,29 +86,29 @@
         </div>
     </div>
 
-    <h1>Message Us</h1>
+    <h1 id="judul-mess-sect">Message Us</h1>
     <div id="message-us-section">
         <form id="messageform" name="message-form" onsubmit="return validateForm()">
             <table>
             <tr>
                 <td>Nama Depan</td>
                 <td>:</td>
-                <td><input id="input-nama-depan" type="text" name="nama-depan"></td>
+                <td><input class="input-form" id="input-nama-depan" type="text" name="nama-depan"></td>
             </tr>
             <tr>
                 <td>Nama Belakang</td>
                 <td>:</td>
-                <td><input id="input-nama-belakang" type="text" name="nama-belakang"></td>
+                <td><input class="input-form" id="input-nama-belakang" type="text" name="nama-belakang"></td>
             </tr>
             <tr>
                 <td>Nomor Telepon</td>
                 <td>:</td>
-                <td><input id="input-notelp" type="number" name="telpon"></td>
+                <td><input class="input-form" id="input-notelp" type="number" name="telpon"></td>
             </tr>
             <tr>
                 <td>Email</td>
                 <td>:</td>
-                <td><input id="input-email" type="email" name="email"></td>
+                <td><input class="input-form" id="input-email" type="email" name="email"></td>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>
@@ -83,7 +123,7 @@
             <tr>
                 <td>Pesan</td>
                 <td>:</td>
-                <td><textarea id="input-pesan" type="textarea" name="pesan" rows="4" cols="auto"></textarea></td>
+                <td><textarea class="input-form" id="input-pesan" type="textarea" name="pesan" rows="4" cols="auto"></textarea></td>
             </tr>
             </table>
             <input type="submit" value="Kirim" id="kirim">
