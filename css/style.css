@@ -154,6 +154,10 @@ header {
     padding-bottom: 5em;
 }
 
+.form-output table {
+    padding: .5em 0 0 .5em;
+}
+
 footer {
     display: block;
     text-align: right;

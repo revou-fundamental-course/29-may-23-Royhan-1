@@ -24,25 +24,19 @@
         <img src="./img/sc-banner-01.png" alt="hero image">
     </div>
 
-    <script>
-        var nama = prompt("Masukkan nama kamu");
-        document.getElementById("nama").innerText = nama;
-    </script>
-
-
     <div id="headquarters-section">
         <h1>Headquarters</h1>
         <div class="wrapper">
             <div class="hq-images-container">
-                <div class="hq-images"></div>
+                <div class="hq-images"><img src="./img/sc-malang.png" alt="Toko SC Malang"></div>
                 <p class="hq-images-p">Jakarta</p>
             </div>
             <div class="hq-images-container">
-                <div class="hq-images"></div>
+                <div class="hq-images"><img src="./img/sc-malang.png" alt="Toko SC Malang"></div>
                 <p class="hq-images-p">Surabaya</p>
             </div>
             <div class="hq-images-container">
-                <div class="hq-images"></div>
+                <div class="hq-images"><img src="./img/sc-malang.png" alt="Toko SC Malang"></div>
                 <p class="hq-images-p">Bandung</p>
             </div>
             <div class="hq-images-container">
@@ -91,7 +85,6 @@
         </form>
 
         <script>
-            // Fix fungsi dibawah agar tidak reload saat submit
             function validateForm() {
                 var fname = document.forms["message-form"]["nama-depan"].value;
                 var lname = document.forms["message-form"]["nama-belakang"].value;
@@ -105,10 +98,10 @@
                 };
                 form.addEventListener("submit", handleForm);
 
-                /*if (fname == "" || lname == "" || dob == "" || gender == "" || pesan == "") {
+                if (fname == "" || lname == "" || dob == "" || gender == "" || pesan == "") {
                 alert("Tidak boleh ada yang kosong");
                 return false;
-                };*/
+                };
 
                 document.getElementById('sender-nama-depan').innerText = fname;
                 document.getElementById('sender-nama-belakang').innerText = lname;
