@@ -16,7 +16,6 @@ html {
 body {
     font-size: var(--fs-body);
     margin: 0;
-    background: hsl(0, 0, 0);
 }
 
 h1 {
