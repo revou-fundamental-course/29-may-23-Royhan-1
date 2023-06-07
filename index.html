@@ -4,9 +4,201 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Company Profile</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        @media only screen and (max-width: 768px) {
+
+            :root {
+                --fs-h1: 2.4rem;
+                --fs-h2: 1.8rem;
+                --fs-body: 1.2rem;
+            }
+
+            header {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-items {
+                margin-top: 2vh;
+            }
+
+            .hq-images {
+                min-width: 24px;
+                min-height: 24px;
+            }
+
+            .hero-text-box {
+                position: inherit;
+            }
+
+            #message-us-section {
+                flex-direction: column;
+            }
+
+            .form-output {
+                width: 100%;
+                margin-top: 2vh;
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <img class="logo" src="./img/logo-sc.svg" alt="SC Ceramics Logo">
+        <div id="nav-bar">
+            <div class="nav-items">Home</div>
+            <a href="./profile.html" target="_blank"><div class="nav-items" style="border-radius: 0;">Our Profile</div></a>
+            <div class="nav-items">Portofolio</div>
+            <a href=".#message-us-section"><div class="nav-items">Message Us</div></a>
+        </div>
+    </header>
+
+    <div id="hero-section" class="hero">
+        <img src="./img/sc-banner-01.png" alt="hero image">
+        <div class="hero-text-box">
+            <h1>Hi, <span id="nama"></span> Welcome to Our Website!</h1>
+            <h2>Ini adalah website SC Ceramic</h2>
+        </div>
+    </div>
+
+    <div id="headquarters-section">
+        <h1>Headquarters</h1>
+        <div class="wrapper">
+            <div class="hq-images-container">
+                <div class="hq-images"><img src="./img/sc-malang.png" alt="Toko SC Malang"></div>
+                <p class="hq-images-p">Jakarta</p>
+            </div>
+            <div class="hq-images-container">
+                <div class="hq-images"><img src="./img/sc-malang.png" alt="Toko SC Malang"></div>
+                <p class="hq-images-p">Surabaya</p>
+            </div>
+            <div class="hq-images-container">
+                <div class="hq-images"><img src="./img/sc-malang.png" alt="Toko SC Malang"></div>
+                <p class="hq-images-p">Bandung</p>
+            </div>
+            <div class="hq-images-container">
+                <div class="hq-images"><img src="./img/sc-malang.png" alt="Toko SC Malang"></div>
+                <p class="hq-images-p">Malang</p>
+            </div>
+        </div>
+    </div>
+
+    <h1 id="judul-mess-sect">Message Us</h1>
+    <div id="message-us-section">
+        <form id="messageform" name="message-form" onsubmit="return validateForm()">
+            <table>
+            <tr>
+                <td>Nama Depan</td>
+                <td>:</td>
+                <td><input class="input-form" id="input-nama-depan" type="text" name="nama-depan"></td>
+            </tr>
+            <tr>
+                <td>Nama Belakang</td>
+                <td>:</td>
+                <td><input class="input-form" id="input-nama-belakang" type="text" name="nama-belakang"></td>
+            </tr>
+            <tr>
+                <td>Nomor Telepon</td>
+                <td>:</td>
+                <td><input class="input-form" id="input-notelp" type="number" name="telpon"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><input class="input-form" id="input-email" type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>:</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="Laki-laki">
+                    <label for="male">Laki-Laki</label>
+                    <input type="radio" id="female" name="gender" value="Perempuan">
+                    <label for="female">Perempuan</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Pesan</td>
+                <td>:</td>
+                <td><textarea class="input-form" id="input-pesan" type="textarea" name="pesan" rows="4" cols="auto"></textarea></td>
+            </tr>
+            </table>
+            <input type="submit" value="Kirim" id="kirim">
+        </form>
+
+        <script>
+            function validateForm() {
+                var fname = document.forms["message-form"]["nama-depan"].value;
+                var lname = document.forms["message-form"]["nama-belakang"].value;
+                var telp = document.forms["message-form"]["telpon"].value;
+                var emailcust = document.forms["message-form"]["email"].value;
+                var gender = document.forms["message-form"]["gender"].value;
+                var pesan = document.forms["message-form"]["pesan"].value;
+
+                var form = document.getElementById("messageform");
+                function handleForm(event) {
+                event.preventDefault();
+                };
+                form.addEventListener("submit", handleForm);
+
+                if (fname == "" || lname == "" || emailcust == "" || gender == "" || pesan == "" || telp == "") {
+                alert("Tidak boleh ada yang kosong");
+                return false;
+                };
+
+                document.getElementById('sender-nama-depan').innerText = fname;
+                document.getElementById('sender-nama-belakang').innerText = lname;
+                document.getElementById('sender-no-telp').innerText = telp;
+                document.getElementById('sender-email').innerText = emailcust;
+                document.getElementById('sender-gender').innerText = gender;
+                document.getElementById('sender-pesan').innerText = pesan;
+                return false;
+                }
+        </script>
+
+        <div class="form-output">
+        
+            <table>
+                <tr>
+                    <td>Nama Depan</td>
+                    <td>:</td>
+                    <td><span id="sender-nama-depan"></span></td>
+                </tr>
+                <tr>
+                    <td>Nama Belakang</td>
+                    <td>:</td>
+                    <td><span id="sender-nama-belakang"></span></td>
+                </tr>
+                <tr>
+                    <td>Nomor Telepon</td>
+                    <td>:</td>
+                    <td><span id="sender-no-telp"></span></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td><span id="sender-email"></span></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td><span id="sender-gender"></span></td>
+                </tr>
+                <tr>
+                    <td>Pesan</td>
+                    <td>:</td>
+                    <td><span id="sender-pesan"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>Created by Royhan</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>
