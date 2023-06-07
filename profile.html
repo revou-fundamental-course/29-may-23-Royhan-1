@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="./css/profile.css">
+    <style>
+        @media only screen and (max-width: 768px) {
+
+            :root {
+                --fs-h1: 2.4rem;
+                --fs-h2: 1.8rem;
+                --fs-body: 1.2rem;
+            }
+
+            header {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-items {
+                margin-top: 2vh;
+            }
+
+            .hero-text-box {
+                position: inherit;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,10 +42,12 @@
     </header>
 
     <div id="hero-section" class="hero">
-        <h1>About Us</h1>
-        <hr>
-        <p>SC Ceramic adalah </p>
         <img src="./img/sc-banner-01.png" alt="hero image">
+        <div class="hero-text-box">
+            <h1>About Us</h1>
+            <hr>
+            <p>SC Ceramic adalah </p>
+        </div>
     </div>
 
     
