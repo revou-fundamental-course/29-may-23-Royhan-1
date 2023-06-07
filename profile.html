@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="./css/profile.css">
+    <style>
+        @media only screen and (max-width: 768px) {
+
+            :root {
+                --fs-h1: 2.4rem;
+                --fs-h2: 1.8rem;
+                --fs-body: 1.1rem;
+            }
+
+            header {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-items {
+                margin-top: 2vh;
+            }
+
+            .hero-text-box {
+                position: inherit;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="./img/logo-sc.svg" alt="SC Ceramics Logo">
+        <div id="nav-bar">
+            <a href="./index.html"><div class="nav-items" style="border-radius: 8px 0 0 8px;">Home</div></a>
+            <div class="nav-items">Our Profile</div>
+            <div class="nav-items">Portofolio</div>
+            <a href="./index.html"><div class="nav-items">Message Us</div></a>
+        </div>
+    </header>
+
+    <div id="hero-section" class="hero">
+        <img src="./img/sc-banner-01.png" alt="hero image">
+        <div class="hero-text-box">
+            <h1>About Us</h1>
+            <hr>
+            <p>
+                SC Ceramic adalah perusahaan keramik yang berdiri pada tahun 1993. Dengan karyawan yang sudah berpengalaman di bidangnya. 
+                Perusahaan kami memproduksi keramik dengan berbagai macam bentuk dari desain original atau dari pelanggan.
+            </p>
+        </div>
+    </div>
+
+    <div id="visi-misi-box">
+        <h1>Visi dan Misi</h1>
+        <hr>
+        <h2>Visi</h2>
+        <ul>
+            <li>Memproduksi keramik berkualitas tinggi.</li>
+            <li>Memberi pelayanan terbaik kepada pelanggan kami.</li>
+            <li>Meningkatkan mutu dari sisi pelayanan hingga produksi perusahaan.</li>
+        </ul>
+        <h2>Misi</h2>
+        <ul>
+            <li>Berkomitmen memberikan kepuasan pelanggan dengan menjaga kualitas, harga, dan waktu pengerjaan.</li>
+            <li>Meningkatkan produktivitas, ketangkasan, dan kualitas kerja SDM lewat pelatihan dan pengembangan kompetensi.</li>
+            <li>Memberikan kesempatan lapangan pekerjaan pada SDM potensial.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Created by Royhan</p>
+    </footer>
+</body>
+</html>
